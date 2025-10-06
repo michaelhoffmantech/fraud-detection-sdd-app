@@ -1,0 +1,19 @@
+{
+    "id": "local-env",
+    "name": "Local Environment",
+    "values": [
+        {
+            "key": "baseUrl",
+            "value": "http://localhost:8080",
+            "type": "string",
+            "enabled": true
+        },
+        {
+            "key": "apiKey",
+            "value": "local-api-key",
+            "type": "string",
+            "enabled": true
+        }
+    ],
+    "_postman_variable_scope": "environment"
+}

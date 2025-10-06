@@ -1,0 +1,172 @@
+{
+    "info": {
+        "name": "Fraud Detection API Tests",
+        "description": "Integration tests for fraud detection endpoints",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "variable": [
+        {
+            "key": "baseUrl",
+            "value": "{{baseUrl}}",
+            "type": "string"
+        }
+    ],
+    "item": [
+        {
+            "name": "Authentication",
+            "item": [
+                {
+                    "name": "Validate API Key",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "X-API-Key",
+                                "value": "{{apiKey}}",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/auth/validate",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "auth",
+                                "validate"
+                            ]
+                        }
+                    },
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "type": "text/javascript",
+                                "exec": [
+                                    "pm.test('Status code is 200', function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test('Response has valid structure', function () {",
+                                    "    const response = pm.response.json();",
+                                    "    pm.expect(response).to.have.property('valid');",
+                                    "    pm.expect(response.valid).to.be.a('boolean');",
+                                    "});"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Transaction Validation",
+            "item": [
+                {
+                    "name": "Validate Single Transaction",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "X-API-Key",
+                                "value": "{{apiKey}}",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/transactions/validate",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "transactions",
+                                "validate"
+                            ]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"transactionId\": \"{{$randomUUID}}\",\n  \"amount\": {{$randomInt}},\n  \"currency\": \"USD\",\n  \"merchantId\": \"MERCH-{{$randomInt}}\",\n  \"customerId\": \"CUST-{{$randomInt}}\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "type": "text/javascript",
+                                "exec": [
+                                    "pm.test('Status code is 200', function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test('Response has valid structure', function () {",
+                                    "    const response = pm.response.json();",
+                                    "    pm.expect(response).to.have.property('valid');",
+                                    "    pm.expect(response).to.have.property('riskScore');",
+                                    "});"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Fraud Detection",
+            "item": [
+                {
+                    "name": "Check Transaction Risk",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "X-API-Key",
+                                "value": "{{apiKey}}",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/fraud/check",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "fraud",
+                                "check"
+                            ]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"transactionId\": \"{{$randomUUID}}\",\n  \"amount\": {{$randomInt}},\n  \"currency\": \"USD\",\n  \"merchantId\": \"MERCH-{{$randomInt}}\",\n  \"customerId\": \"CUST-{{$randomInt}}\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "type": "text/javascript",
+                                "exec": [
+                                    "pm.test('Status code is 200', function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test('Response has risk score', function () {",
+                                    "    const response = pm.response.json();",
+                                    "    pm.expect(response).to.have.property('riskScore');",
+                                    "    pm.expect(response.riskScore).to.be.a('number');",
+                                    "});"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
