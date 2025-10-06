@@ -1,0 +1,38 @@
+name: Integration Tests
+
+on:
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '0 0 * * *'  # Run daily at midnight UTC
+  workflow_dispatch:      # Allow manual trigger
+
+jobs:
+  integration-tests:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
+        
+    - name: Install Newman
+      run: npm install -g newman newman-reporter-htmlextra
+        
+    - name: Run Integration Tests
+      run: |
+        newman run ./tests/integration/postman/collections/fraud-detection.json \
+          -e ./tests/integration/postman/environments/dev.json \
+          -d ./tests/integration/postman/data/test-cases.json \
+          -r cli,htmlextra \
+          --reporter-htmlextra-export ./tests/integration/newman/reports/report.html
+          
+    - name: Upload Test Results
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: test-results
+        path: ./tests/integration/newman/reports/

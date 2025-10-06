@@ -1,0 +1,19 @@
+{
+    "id": "staging-env",
+    "name": "Staging Environment",
+    "values": [
+        {
+            "key": "baseUrl",
+            "value": "https://staging-fraud-api.example.com",
+            "type": "string",
+            "enabled": true
+        },
+        {
+            "key": "apiKey",
+            "value": "staging-api-key",
+            "type": "string",
+            "enabled": true
+        }
+    ],
+    "_postman_variable_scope": "environment"
+}

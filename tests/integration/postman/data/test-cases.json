@@ -1,0 +1,96 @@
+{
+    "testCases": [
+        {
+            "name": "Valid Transaction - Standard Amount",
+            "request": {
+                "transactionId": "test-001",
+                "amount": 100.00,
+                "currency": "USD",
+                "merchantId": "MERCH-001",
+                "customerId": "CUST-001",
+                "timestamp": "2025-10-05T20:00:00Z",
+                "location": {
+                    "latitude": 40.7128,
+                    "longitude": -74.0060,
+                    "country": "US"
+                }
+            },
+            "expectedResponse": {
+                "status": 200,
+                "body": {
+                    "valid": true,
+                    "riskScore": 0.1
+                }
+            }
+        },
+        {
+            "name": "Valid Transaction - Large Amount",
+            "request": {
+                "transactionId": "test-002",
+                "amount": 10000.00,
+                "currency": "USD",
+                "merchantId": "MERCH-001",
+                "customerId": "CUST-001",
+                "timestamp": "2025-10-05T20:00:00Z",
+                "location": {
+                    "latitude": 40.7128,
+                    "longitude": -74.0060,
+                    "country": "US"
+                }
+            },
+            "expectedResponse": {
+                "status": 200,
+                "body": {
+                    "valid": true,
+                    "riskScore": 0.6
+                }
+            }
+        },
+        {
+            "name": "Invalid Transaction - Negative Amount",
+            "request": {
+                "transactionId": "test-003",
+                "amount": -100.00,
+                "currency": "USD",
+                "merchantId": "MERCH-001",
+                "customerId": "CUST-001",
+                "timestamp": "2025-10-05T20:00:00Z",
+                "location": {
+                    "latitude": 40.7128,
+                    "longitude": -74.0060,
+                    "country": "US"
+                }
+            },
+            "expectedResponse": {
+                "status": 400,
+                "body": {
+                    "valid": false,
+                    "error": "Invalid amount"
+                }
+            }
+        },
+        {
+            "name": "Suspicious Transaction - Unusual Location",
+            "request": {
+                "transactionId": "test-004",
+                "amount": 500.00,
+                "currency": "USD",
+                "merchantId": "MERCH-001",
+                "customerId": "CUST-001",
+                "timestamp": "2025-10-05T20:00:00Z",
+                "location": {
+                    "latitude": -33.8688,
+                    "longitude": 151.2093,
+                    "country": "AU"
+                }
+            },
+            "expectedResponse": {
+                "status": 200,
+                "body": {
+                    "valid": true,
+                    "riskScore": 0.8
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "id": "prod-env",
+    "name": "Production Environment",
+    "values": [
+        {
+            "key": "baseUrl",
+            "value": "https://fraud-api.example.com",
+            "type": "string",
+            "enabled": true
+        },
+        {
+            "key": "apiKey",
+            "value": "prod-api-key",
+            "type": "string",
+            "enabled": true
+        }
+    ],
+    "_postman_variable_scope": "environment"
+}

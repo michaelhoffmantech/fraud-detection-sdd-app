@@ -1,0 +1,19 @@
+{
+    "id": "dev-env",
+    "name": "Development Environment",
+    "values": [
+        {
+            "key": "baseUrl",
+            "value": "https://dev-fraud-api.example.com",
+            "type": "string",
+            "enabled": true
+        },
+        {
+            "key": "apiKey",
+            "value": "dev-api-key",
+            "type": "string",
+            "enabled": true
+        }
+    ],
+    "_postman_variable_scope": "environment"
+}
