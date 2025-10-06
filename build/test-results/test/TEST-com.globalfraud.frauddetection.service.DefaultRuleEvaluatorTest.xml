@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.globalfraud.frauddetection.service.DefaultRuleEvaluatorTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2025-10-06T01:57:22" hostname="NV-MHOFFMAN25" time="0.345">
+  <properties/>
+  <testcase name="evaluateAmountThresholdRule_ShouldReturnTrue_WhenAmountExceedsThreshold()" classname="com.globalfraud.frauddetection.service.DefaultRuleEvaluatorTest" time="0.314"/>
+  <testcase name="evaluateVelocityCheck_ShouldReturnTrue_WhenTooManyTransactions()" classname="com.globalfraud.frauddetection.service.DefaultRuleEvaluatorTest" time="0.015"/>
+  <testcase name="calculateRiskScore_ShouldReturnHighScore_WhenAmountMuchHigherThanThreshold()" classname="com.globalfraud.frauddetection.service.DefaultRuleEvaluatorTest" time="0.011"/>
+  <testcase name="evaluateVelocityCheck_ShouldReturnFalse_WhenFewTransactions()" classname="com.globalfraud.frauddetection.service.DefaultRuleEvaluatorTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

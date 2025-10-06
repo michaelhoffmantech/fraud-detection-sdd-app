@@ -97,11 +97,7 @@ if (!(Test-Path $DataPath)) {
 }
 
 # Build Newman command
-$NewmanCommand = "newman run `"$CollectionPath`" -e `"$EnvironmentPath`" -d `"$DataPath`""
-
-if ($GenerateReport) {
-    $NewmanCommand += " -r cli,htmlextra --reporter-htmlextra-export `"$ReportPath\report-$Environment.html`""
-}
+$NewmanCommand = "newman run `"$CollectionPath`" -e `"$EnvironmentPath`" -d `"$DataPath`" -r cli"
 
 # Execute tests
 try {

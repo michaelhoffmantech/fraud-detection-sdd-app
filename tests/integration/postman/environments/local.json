@@ -10,7 +10,7 @@
         },
         {
             "key": "apiKey",
-            "value": "local-api-key",
+            "value": "local-development-api-key",
             "type": "string",
             "enabled": true
         }

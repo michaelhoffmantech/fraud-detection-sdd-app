@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.globalfraud.frauddetection.service.FraudDetectionServiceTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-10-06T01:57:23" hostname="NV-MHOFFMAN25" time="0.093">
+  <properties/>
+  <testcase name="processTransaction_ShouldApproveTransaction_WhenNoRulesTriggered()" classname="com.globalfraud.frauddetection.service.FraudDetectionServiceTest" time="0.073"/>
+  <testcase name="processTransaction_ShouldRejectTransaction_WhenHighRiskRulesTriggered()" classname="com.globalfraud.frauddetection.service.FraudDetectionServiceTest" time="0.011"/>
+  <testcase name="processTransaction_ShouldFlagForReview_WhenMediumRiskRulesTriggered()" classname="com.globalfraud.frauddetection.service.FraudDetectionServiceTest" time="0.008"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

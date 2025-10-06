@@ -23,6 +23,8 @@ public class TransactionRequest {
     @NotBlank(message = "Currency is required")
     private String currency;
 
-    @NotNull(message = "Transaction timestamp is required")
     private ZonedDateTime transactionTimestamp;
+
+    @NotBlank(message = "Transaction ID is required")
+    private String transactionId;
 }

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - FraudDetectionApplicationTests</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>FraudDetectionApplicationTests</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.globalfraud.frauddetection.html">com.globalfraud.frauddetection</a> &gt; FraudDetectionApplicationTests</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.490s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+<li>
+<a href="#tab2">Standard error</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">contextLoads()</td>
+<td class="success">0.490s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>20:57:10.911 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.globalfraud.frauddetection.FraudDetectionApplicationTests]: FraudDetectionApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+20:57:11.068 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.globalfraud.frauddetection.FraudDetectionApplication for test class com.globalfraud.frauddetection.FraudDetectionApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2025-10-05T20:57:11.710-05:00  INFO 51296 --- [fraud-detection-service] [    Test worker] c.g.f.FraudDetectionApplicationTests     : Starting FraudDetectionApplicationTests using Java 21 with PID 51296 (started by MichaelHoffman in C:\dev\sdd\fraud-detection-sdd-app)
+2025-10-05T20:57:11.713-05:00  INFO 51296 --- [fraud-detection-service] [    Test worker] c.g.f.FraudDetectionApplicationTests     : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2025-10-05T20:57:13.248-05:00  INFO 51296 --- [fraud-detection-service] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-05T20:57:13.335-05:00  INFO 51296 --- [fraud-detection-service] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 75 ms. Found 2 JPA repository interfaces.
+2025-10-05T20:57:14.210-05:00  INFO 51296 --- [fraud-detection-service] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-05T20:57:14.552-05:00  INFO 51296 --- [fraud-detection-service] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:frauddb user=SA
+2025-10-05T20:57:14.555-05:00  INFO 51296 --- [fraud-detection-service] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-05T20:57:14.679-05:00  INFO 51296 --- [fraud-detection-service] [    Test worker] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 9.22.3 by Redgate
+2025-10-05T20:57:14.679-05:00  INFO 51296 --- [fraud-detection-service] [    Test worker] o.f.c.internal.license.VersionPrinter    : See release notes here: https://rd.gt/416ObMi
+2025-10-05T20:57:14.679-05:00  INFO 51296 --- [fraud-detection-service] [    Test worker] o.f.c.internal.license.VersionPrinter    : 
+2025-10-05T20:57:14.765-05:00  INFO 51296 --- [fraud-detection-service] [    Test worker] org.flywaydb.core.FlywayExecutor         : Database: jdbc:h2:mem:frauddb (H2 2.2)
+2025-10-05T20:57:14.772-05:00  WARN 51296 --- [fraud-detection-service] [    Test worker] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+2025-10-05T20:57:14.830-05:00  INFO 51296 --- [fraud-detection-service] [    Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table &quot;PUBLIC&quot;.&quot;flyway_schema_history&quot; does not exist yet
+2025-10-05T20:57:14.836-05:00  INFO 51296 --- [fraud-detection-service] [    Test worker] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.035s)
+2025-10-05T20:57:14.846-05:00  INFO 51296 --- [fraud-detection-service] [    Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table &quot;PUBLIC&quot;.&quot;flyway_schema_history&quot; ...
+2025-10-05T20:57:14.887-05:00  INFO 51296 --- [fraud-detection-service] [    Test worker] o.f.core.internal.command.DbMigrate      : Current version of schema &quot;PUBLIC&quot;: &lt;&lt; Empty Schema &gt;&gt;
+2025-10-05T20:57:14.895-05:00  INFO 51296 --- [fraud-detection-service] [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema &quot;PUBLIC&quot; to version &quot;1 - initial schema&quot;
+2025-10-05T20:57:14.920-05:00  INFO 51296 --- [fraud-detection-service] [    Test worker] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema &quot;PUBLIC&quot;, now at version v1 (execution time 00:00.011s)
+2025-10-05T20:57:15.083-05:00  INFO 51296 --- [fraud-detection-service] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-05T20:57:15.162-05:00  INFO 51296 --- [fraud-detection-service] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-10-05T20:57:15.200-05:00  INFO 51296 --- [fraud-detection-service] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-05T20:57:15.524-05:00  INFO 51296 --- [fraud-detection-service] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-05T20:57:15.577-05:00  WARN 51296 --- [fraud-detection-service] [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-05T20:57:16.548-05:00  INFO 51296 --- [fraud-detection-service] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-05T20:57:16.574-05:00  INFO 51296 --- [fraud-detection-service] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-05T20:57:16.980-05:00  INFO 51296 --- [fraud-detection-service] [    Test worker] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-10-05T20:57:18.439-05:00  WARN 51296 --- [fraud-detection-service] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-05T20:57:19.898-05:00  WARN 51296 --- [fraud-detection-service] [    Test worker] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 3b1e1319-243f-433d-9a22-fe37186000f9
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-10-05T20:57:20.044-05:00  INFO 51296 --- [fraud-detection-service] [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoint(s) beneath base path '/actuator'
+2025-10-05T20:57:20.070-05:00  INFO 51296 --- [fraud-detection-service] [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@35d86695, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7a25ff42, org.springframework.security.web.context.SecurityContextHolderFilter@32b44a5d, org.springframework.security.web.header.HeaderWriterFilter@6d1a9e8, org.springframework.web.filter.CorsFilter@6ac76b9f, org.springframework.security.web.csrf.CsrfFilter@659d856e, org.springframework.security.web.authentication.logout.LogoutFilter@35fedeae, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@66aa9ac9, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@27719e44, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@305e8885, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2fdbd1eb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@31b99ff5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@32c299e5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4644bcd5, org.springframework.security.web.access.ExceptionTranslationFilter@1b6395d9, org.springframework.security.web.access.intercept.AuthorizationFilter@2d034bca]
+2025-10-05T20:57:20.210-05:00  INFO 51296 --- [fraud-detection-service] [    Test worker] c.g.f.FraudDetectionApplicationTests     : Started FraudDetectionApplicationTests in 8.929 seconds (process running for 10.676)
+</pre>
+</span>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>WARNING: A Java agent has been loaded dynamically (C:\Users\MichaelHoffman\.gradle\caches\modules-2\files-2.1\net.bytebuddy\byte-buddy-agent\1.14.10\90ed94ac044ea8953b224304c762316e91fd6b31\byte-buddy-agent-1.14.10.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.5</a> at Oct 5, 2025, 8:57:23 PM</p>
+</div>
+</div>
+</body>
+</html>
